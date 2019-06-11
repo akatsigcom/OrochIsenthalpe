@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Ceci est un test de dialogue automatique.</string>
+        <string>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</string>
+        <string>ça défilera tout seul</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaia</name>
+      <sentences>
+        <string>Accedebant enim eius asperitati, ubi inminuta vel laesa amplitudo imperii dicebatur, et iracundae suspicionum</string>
+        <string>uentae blanditiae exaggerantium incidentia e</string>
+        <string>Itaque tum Scaevola cum in eam ipsam mentionem incidisset, exposuit nobis sermonem Laeli</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>

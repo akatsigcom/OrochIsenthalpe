@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Bonjour</string>
+        <string>ceci est un test</string>
+        <string>Inchalla ça marche</string>
+        <string>Youpi !</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>truc</name>
+      <sentences>
+        <string>phrase unique</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaia</name>
+      <sentences>
+        <string>ouais, c'est plutot cool</string>
+        <string>de fou</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>

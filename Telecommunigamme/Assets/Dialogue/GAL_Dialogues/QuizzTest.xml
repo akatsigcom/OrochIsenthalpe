@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TreeDialogue>
+  <Nodes>
+    
+    
+    <TreeDialogueNode>
+      <nodeID>0</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>vieux</name>
+            <sentence>
+              <string>Ceci est un premier test de quizz</string>
+              <string>On essaye un changement d'orateur</string>
+            </sentence>
+          </Speech>
+          <Speech>
+            <name>jeune</name>
+            <sentence>
+              <string>ça a marché</string>
+              <string>maintenant répond "A" stp</string>
+            </sentence>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>A</Text>
+          <DestinationNodeID>1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>B</Text>
+          <DestinationNodeID>1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>C</Text>
+          <DestinationNodeID>1</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>1</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>vieux</name>
+            <sentence>
+              <string>Je ne sais pas vraiment ce que tu as répondu</string>
+              <string>carotte</string>
+            </sentence>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>end</Text>
+          <DestinationNodeID>-1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>end</Text>
+          <DestinationNodeID>-1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>return</Text>
+          <DestinationNodeID>0</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+    </TreeDialogueNode>
+  </Nodes>  
+</TreeDialogue>
