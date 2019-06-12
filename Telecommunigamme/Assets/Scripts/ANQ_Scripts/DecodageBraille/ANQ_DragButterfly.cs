@@ -11,7 +11,7 @@ public class ANQ_DragButterfly : MonoBehaviour
     int maxDist = ANQ_GenerateBigButterfly.bigButterflyNumber; 
 
     void Update()
-    {        if (isBeingHeld)
+    {   if (isBeingHeld)
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;

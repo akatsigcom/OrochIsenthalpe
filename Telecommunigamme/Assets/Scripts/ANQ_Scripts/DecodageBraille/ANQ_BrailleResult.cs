@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ANQ_MorseResult : MonoBehaviour
+public class ANQ_BrailleResult : MonoBehaviour
 {
     void Update()
     {
         Text textResult = GetComponent<Text>();
-        if (CodageMorse.displayResult)
+        if (ANQ_GenerateBigButterfly.rightBrailleWord == textResult.text)
         {
             textResult.color = Color.green;
         }
