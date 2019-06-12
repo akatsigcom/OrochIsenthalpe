@@ -11,8 +11,6 @@ public class OnTriggerEnterDialogue : MonoBehaviour
     {
         if (done == false)
         {
-            Debug.Log("Trigger detecté");
-
             trig.TriggerDialogue();
             done = true;
         }
