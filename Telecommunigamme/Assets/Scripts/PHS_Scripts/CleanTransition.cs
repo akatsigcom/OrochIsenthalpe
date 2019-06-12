@@ -13,16 +13,8 @@ public class CleanTransition : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        FadeToLevel(nextScene);
+        GameManager.instance.FadeToLevel(nextScene);
     }
 
-    public void FadeToLevel(int levelIndex)
-    {
-        sceneToLoad = levelIndex;
-        animator.SetTrigger("FadeOut");
-    }
-    public void OnFadeComplete()
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
+   
 }
