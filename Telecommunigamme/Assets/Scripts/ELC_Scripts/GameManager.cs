@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour
                 player.transform.position = new Vector3(rightCollider.transform.position.x - 4f, rightCollider.transform.position.y, rightCollider.transform.position.z);
             }
             sens = 1;
-            Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, -1);
-            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y-0.1f, -1);
+            Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, player.transform.position.z);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y-0.1f, player.transform.position.z);
 
         }
 
