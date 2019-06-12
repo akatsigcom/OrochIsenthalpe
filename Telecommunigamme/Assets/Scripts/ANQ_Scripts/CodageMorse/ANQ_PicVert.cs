@@ -12,10 +12,13 @@ public class ANQ_PicVert : MonoBehaviour
 
     private int waypointIndex = 0;
     private bool canFly = false;
+    public static Vector3 lastPos;
+
 
     private void Start()
     {
         transform.position = waypoints[waypointIndex].transform.position;
+        lastPos = waypoints[waypoints.Length-1].transform.position;
     }
 
     private void Update()
