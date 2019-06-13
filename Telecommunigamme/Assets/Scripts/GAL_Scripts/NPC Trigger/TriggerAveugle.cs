@@ -9,18 +9,16 @@ public class TriggerAveugle : MonoBehaviour
 {
     public string dialoguePath_FirstMeet;
     public string dialoguePath_LoopDia;
-    public string dialoguePath_Congratulation;
 
-    private bool done = false;
 
     public void TriggerDialogue()
     {
         Dialogue dialogue = new Dialogue();
-        if (done == false)
+        if (GameManager.SetFtAveugle() == false)
         {
             dialogue = load_dialogue(dialoguePath_FirstMeet);
             FindObjectOfType<OnClickDialogueManager>().StartDialogue(dialogue);
-            done = true;
+            GameManager.GetFtAveugle(true);
         }
         else
         {

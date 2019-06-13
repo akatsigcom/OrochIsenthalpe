@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool move = true;
+    public static bool ftAveugle=false;
+    public static bool ftPlaine =false;
+    public static bool ftColline =false;
     public static GameManager instance = null;
     //public GameObject filet;
     //private bool firstTime = true;
@@ -40,6 +43,36 @@ public class GameManager : MonoBehaviour
 
 
     }
+    public static void GetFtAveugle(bool boul)
+    {
+        ftAveugle = boul;
+    }
+
+    public static void GetFtPlaine(bool boul)
+    {
+        ftPlaine = boul;
+    }
+
+    public static void GetFtColline (bool boul)
+    {
+        ftColline = boul;
+    }
+
+    public static bool SetFtAveugle()
+    {
+        return(ftAveugle);
+    }
+
+    public static bool SetFtPlaine()
+    {
+        return (ftPlaine);
+    }
+
+    public static bool SetFtColline()
+    {
+        return (ftColline);
+    }
+
 
     public void SetUp()
 
@@ -137,4 +170,6 @@ public class GameManager : MonoBehaviour
     {
         move = true;
     }
+
+   
 }
