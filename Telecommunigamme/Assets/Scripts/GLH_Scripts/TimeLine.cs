@@ -47,8 +47,10 @@ public class TimeLine : MonoBehaviour
     public void TimeForward() //to advance of one unit in the timeline
     {
         Transform memory = unitHolder.transform.GetChild(timeCount);
+
         if (unitHolder.transform.GetChild(timeCount).gameObject.name == "time unit empty(Clone)")
         {
+            
             Destroy(unitHolder.transform.GetChild(timeCount).gameObject);
 
             Transform newUnit = Instantiate(timeUnitFilled, memory.position, memory.rotation);
@@ -58,7 +60,7 @@ public class TimeLine : MonoBehaviour
             timeCount++;
         }
         else if(unitHolder.transform.GetChild(timeCount).gameObject.name == "event unit(Clone)")
-        {
+        {            
             Destroy(unitHolder.transform.GetChild(timeCount).gameObject);
 
             Transform newUnit = Instantiate(passedEventUnit, memory.position, memory.rotation);
@@ -73,10 +75,11 @@ public class TimeLine : MonoBehaviour
                 {
                     newUnit.GetComponent<EventUnit>().SetPanel(child.gameObject);
                 }
-            }
-
-  
-
+            }            
+        }
+        else
+        {
+            Debug.LogError("Problem bitch");
         }
         
     }
@@ -98,24 +101,21 @@ public class TimeLine : MonoBehaviour
         return timeCount;
     }
 
-    public void SetSize(int size) //set the size of the timeline
-    {
-        timeLineSize = size;
-    }
-
     public void DestroyTimeline() //if it's needed to erase the timeline (it does it automatically at the generation too)
     {
         foreach (Transform child in unitHolder.transform)
         {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
+        }
+        foreach(Transform child in descriptionHolder.transform)
+        {
+            Destroy(child.gameObject);
         }
     }
 
-    //int eventTime, string eventName, string eventDescription
-    public void AddEvent(int eventTime)
+
+    public void AddEvent(int eventTime, string eventName, string eventDescription)
     {
-        string eventName = "Hello";
-        string eventDescription = "I'm an event";
         Transform memory = unitHolder.transform.GetChild(eventTime - 1);
         Destroy(unitHolder.transform.GetChild(eventTime-1).gameObject);
         if(timeCount < eventTime)
