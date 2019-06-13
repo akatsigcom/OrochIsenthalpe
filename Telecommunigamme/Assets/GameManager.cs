@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-   
+
     public void OnFadeComplete(int numbercol,int levelIndex)
     {
         colliderNumber = numbercol;
