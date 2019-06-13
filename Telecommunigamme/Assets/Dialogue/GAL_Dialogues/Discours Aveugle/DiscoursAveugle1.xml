@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Vieil aveugle</name>
+      <sentences>
+        <string>Oh quelqu’un enfin !</string>
+        <string>Bonjour, auriez-vous la bonté d’aider un pauvre vieil aveugle à rentrer chez lui ? </string>
+        <string>Voyez-vous j’ai cassé ma canne et il m’est impossible de me relever pour rentrer chez moi.</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>

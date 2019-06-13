@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TreeDialogue [
+  <!ENTITY Vieux "Charles">]>
+<TreeDialogue>
+  <Nodes>
+    
+    
+    <TreeDialogueNode>
+      <nodeID>0</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>Eh bien, si on m'avait dit que je croiserais une fille aussi incroyable que toi, je n'y aurais pas cru.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Allons allons, ce n'est rien. Je vous avoue que je ne sais même plus trop d'où je tiens ces connaissances.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>Tu es une jeune fille bien mystérieuse. Mais en tout cas je te serais éternellement reconnaissant pour tout ce que tu m’apprends.</string>
+              <string>Le braille dont tu viens de me parler est passionnant !</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>C'est vrai que c'est pratique, pouvoir exprimer n'importe quelle lettre avec simplement...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>4</Text>
+          <DestinationNodeID>1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>6</Text>
+          <DestinationNodeID>2</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>8</Text>
+          <DestinationNodeID>3</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>De combien de points est constituée une lettre en braille ?</Question>
+    </TreeDialogueNode>
+ 
+    <TreeDialogueNode>
+      <nodeID>1</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...4 points.</string>
+              <string>Cela nous fait en tout...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>64</Text>
+          <DestinationNodeID>4</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>68</Text>
+          <DestinationNodeID>5</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>72</Text>
+          <DestinationNodeID>6</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Combien de combinaison différentes pourraient-on faire en tout en braille ?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>2</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...6 points.</string>
+              <string>Cela nous fait en tout...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>64</Text>
+          <DestinationNodeID>4</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>68</Text>
+          <DestinationNodeID>5</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>72</Text>
+          <DestinationNodeID>6</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Combien de combinaison différentes pourraient-on faire en tout en braille ?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>3</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...8 points.</string>
+              <string>Cela nous fait en tout...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>64</Text>
+          <DestinationNodeID>4</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>68</Text>
+          <DestinationNodeID>5</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>72</Text>
+          <DestinationNodeID>6</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Combien de combinaison différentes pourraient-on faire en tout en braille ?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>4</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...64 combinaisons.</string>
+              <string>C'est clairement assez pour notre alphabet.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>C'est un outil très utile pour ceux qui ont des défaillances visuelles.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>En plus, je sais pas si tu as remarqué, mais le braille est un code à longueur...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>fixe</Text>
+          <DestinationNodeID>7</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>variable</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>aucun des deux</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Le braille est-il à longueur fixe ou variable?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>5</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...68 combinaisons.</string>
+              <string>C'est clairement assez pour notre alphabet.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>C'est un outil très utile pour ceux qui ont des défaillances visuelles.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>En plus, je sais pas si tu as remarqué, mais le braille est un code à longueur...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>fixe</Text>
+          <DestinationNodeID>7</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>variable</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>aucun des deux</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Le braille est-il à longueur fixe ou variable?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>6</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>...72 combinaisons.</string>
+              <string>C'est clairement assez pour notre alphabet.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>C'est un outil très utile pour ceux qui ont des défaillances visuelles.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>En plus, je sais pas si tu as remarqué, mais le braille est un code à longueur...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>fixe</Text>
+          <DestinationNodeID>7</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>variable</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>aucun des deux</Text>
+          <DestinationNodeID>8</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Le braille est-il à longueur fixe ou variable?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>7</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>Ah, c'est vrai, il est toujours codé sur le même nombre de point.</string>
+              <string>Et d'ailleurs, comment as-tu trouvé la plante qui a sauvé le village ? </string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Je l'ai trouvé devant un complexe étrange qui émettait un signal en morse.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>En morse ?</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Oui, un code à longueur...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>fixe</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>variable</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>aucun des deux</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Le morse est-il à longueur fixe ou variable?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>8</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>Ah, je pensais pourtant avoir compris qu'il se codait toujours sur le même nombre de point.</string>
+              <string>Et d'ailleurs, comment as-tu trouvé la plante qui a sauvé le village ? </string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Je l'ai trouvé devant un complexe étrange qui émettait un signal en morse.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>En morse ?</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Oui, un code à longueur...</string>
+            </sentences>
+          </Speech>
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>fixe</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>variable</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>aucun des deux</Text>
+          <DestinationNodeID>9</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Le morse est-il à longueur fixe ou variable?</Question>
+    </TreeDialogueNode>
+
+    <TreeDialogueNode>
+      <nodeID>9</nodeID>
+      <Text>
+        <discution>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Il permet en plus de communiquer facilement à distance, via des signaux lumineux par exemple.</string>
+              <string>Je te l'expliquerais à l'occasion.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Vieux</name>
+            <sentences>
+              <string>Haha merci, je suis un grand curieux. Bon, il doit être temps d'aller se coucher. Tu peux aller dans ta chambre à l'étage si tu veux.</string>
+            </sentences>
+          </Speech>
+          <Speech>
+            <name>Alaïa</name>
+            <sentences>
+              <string>Bonne nuit, Vieux</string>
+            </sentences>
+          </Speech>
+          
+        </discution>
+      </Text>
+      <Options>
+        <TreeDialogueOption>
+          <Text>Oui</Text>
+          <DestinationNodeID>-1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>Oui</Text>
+          <DestinationNodeID>-1</DestinationNodeID>
+        </TreeDialogueOption>
+        <TreeDialogueOption>
+          <Text>Oui</Text>
+          <DestinationNodeID>-1</DestinationNodeID>
+        </TreeDialogueOption>
+      </Options>
+      <Question>Voulez vous allez vous coucher ?</Question>
+    </TreeDialogueNode>
+
+
+  </Nodes>  
+</TreeDialogue>
