@@ -116,9 +116,9 @@ public class Puzzle : MonoBehaviour
         //Vector3Int [,] MatriceLettre= transformationMatrice(mot_a_coder);
         //Texture2D [,] ImageLettre = transformationImage(mot_a_coder);
 
-        for (int y = 0; y < blocksPerLine; y++)
+        for (int y = 0; y < blocksPerColumn ; y++)
         {
-            for (int x = 0; x < blocksPerColumn; x++)
+            for (int x = 0; x < blocksPerLine; x++)
             {
                 GameObject blockObject = GameObject.CreatePrimitive(PrimitiveType.Quad); // récupération d'un bloc = Quad 
                 blockObject.transform.position = new Vector2(-Vector2.one.x * (blocksPerColumn - 1) * .5f + new Vector2(x, y).x, -Vector2.one.y * (blocksPerLine - 1) * .5f + new Vector2(x, y).y); // on s'arrange pour que ça soit symétrique par rapport à la caméra 
@@ -131,7 +131,7 @@ public class Puzzle : MonoBehaviour
                 //block.Init(new Vector2Int(x, y), ImageLettre[x,y], MatriceLettre[x, y]); //on donne l'image (une partie découpée de l'image d'origine) au bloc 
                 blocks[x, y] = block;
 
-                if (y == blocksPerLine - 1 && x == blocksPerColumn - 1)
+                if (y == blocksPerColumn - 1 && x == blocksPerLine - 1)
                 {
                     blockObject.SetActive(false); // on enlève l'image du bloc en bas à droite
                     emptyBlock = block;
@@ -142,11 +142,11 @@ public class Puzzle : MonoBehaviour
 
         for (int i = 0; i < nombrePermutation; i++) // on réalise nombrePermutation permutations entre deux blocs pour mélanger le puzzle
         {
-            int a = Random.Range(0, blocksPerColumn); // x
-            int b = Random.Range(0, blocksPerLine); // y
+            int a = Random.Range(0, blocksPerLine); // 
+            int b = Random.Range(0, blocksPerColumn); // x
 
-            int c = Random.Range(0, blocksPerColumn);
-            int d = Random.Range(0, blocksPerLine);
+            int c = Random.Range(0, blocksPerLine);
+            int d = Random.Range(0, blocksPerColumn);
 
             Vector2Int targetCoord = blocks[a, b].coord;
             blocks[a, b].coord = blocks[c, d].coord;
@@ -163,9 +163,9 @@ public class Puzzle : MonoBehaviour
         }
 
 
-        Camera.main.orthographicSize = Mathf.Max(blocksPerColumn,blocksPerLine) * .55f; //modification de l'image pour que ça correponde à l'écran
+        Camera.main.orthographicSize = Mathf.Max(blocksPerLine, blocksPerColumn) * .55f; //modification de l'image pour que ça correponde à l'écran
         inputs = new Queue<Block>();
-        state = PuzzleState.InPlay; 
+        state = PuzzleState.InPlay;
     }
 
     void PlayerMoveBlockInput(Block blockToMove)

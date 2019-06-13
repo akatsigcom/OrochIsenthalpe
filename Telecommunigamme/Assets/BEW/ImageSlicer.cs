@@ -13,7 +13,7 @@ public static class ImageSlicer
         int blockHeight = image.height/2;
 
 
-        Texture2D[,] blocks = new Texture2D[2, blocksPerLine];
+        Texture2D[,] blocks = new Texture2D[blocksPerLine, 2];
 
         image = Puzzle.dict["Maj"];
         for (int y = 0; y < 2; y++)

@@ -225,9 +225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocksPerLine: 0
   blocksPerColumn: 2
-  shuffleLength: 0
+  shuffleLength: 10
   defaultMoveDuration: 0.2
-  nombrePermutation: 0
+  nombrePermutation: 20
   shuffleMoveDuration: 0.1
 --- !u!4 &973297563
 Transform:
@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973297561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1933583, y: 0.012303613, z: 0.055310298}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
