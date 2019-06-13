@@ -401,8 +401,8 @@
           <DestinationNodeID>-1</DestinationNodeID>
         </TreeDialogueOption>
         <TreeDialogueOption>
-          <Text>Oui</Text>
-          <DestinationNodeID>-1</DestinationNodeID>
+          <Text>non, je veux recommencer.</Text>
+          <DestinationNodeID>0</DestinationNodeID>
         </TreeDialogueOption>
       </Options>
       <Question>Voulez vous allez vous coucher ?</Question>

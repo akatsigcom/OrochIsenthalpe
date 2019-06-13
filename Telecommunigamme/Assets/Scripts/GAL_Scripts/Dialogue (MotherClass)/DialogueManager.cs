@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     private string sentence = "default";
 
+
     private IEnumerator coroutine;
     protected Queue<string> sentences;
     protected Queue<Speech> speeches;
@@ -26,6 +27,8 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         speeches = new Queue<Speech>();
     }
+
+
 
     public void StartDialogue (Dialogue dialogue)
     {
