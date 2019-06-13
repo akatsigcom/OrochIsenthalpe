@@ -7,7 +7,7 @@ public class ANQ_GenerateBigButterfly : MonoBehaviour
 {
     public GameObject bigButterfly;
 
-    string[] telecomWords = { "Shannon", "Telecom", "Huffman" };
+    string[] telecomWords = { "Shannon", "Telecom", "Huffman" };  // 
     public static string rightBrailleWord = "Shannon";
 
     int setBigButterflyNumber = rightBrailleWord.Length + 1;

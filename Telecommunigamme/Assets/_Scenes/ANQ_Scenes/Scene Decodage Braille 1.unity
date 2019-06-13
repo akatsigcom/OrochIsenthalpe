@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   butterfly: {fileID: 6517948328874459001, guid: 9b8a6ab91a292324da83177ef6dd67ae,
     type: 3}
-  butterflyNumber: 50
+  butterflyNumber: 8
 --- !u!1 &1339984109
 GameObject:
   m_ObjectHideFlags: 0
