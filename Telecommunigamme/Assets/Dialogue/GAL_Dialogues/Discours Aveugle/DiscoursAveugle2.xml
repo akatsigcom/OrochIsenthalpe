@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Vieil aveugle</name>
+      <sentences>
+        <string>Retrouvez ma canne, je vous en prie !</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>
