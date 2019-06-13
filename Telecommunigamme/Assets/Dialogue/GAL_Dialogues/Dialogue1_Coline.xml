@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Attends-moi !! </string>
+        <string>ALAÏA !!!</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaïa</name>
+      <sentences>
+        <string>Vite, il faut arriver au village avant la nuit.</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Alaïa !!!</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaïa</name>
+      <sentences>
+        <string>Suivons le chemin.</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Pffff...</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaïa</name>
+      <sentences>
+        <string>Regarde le village est juste au bout de la vallée à côté de la forêt. On y est presque. </string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>Brrrr... Tu as simplement décidé de quitter le sable, la chaleur et la mer pour cette horrible montagne.</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>

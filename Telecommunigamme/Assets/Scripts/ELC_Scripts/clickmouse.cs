@@ -10,7 +10,7 @@ public class clickmouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.instance.move)
         {
             mouspos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             mouspos = Camera.main.ScreenToWorldPoint(mouspos);
@@ -19,9 +19,10 @@ public class clickmouse : MonoBehaviour
 
             if (!grid.HasTile(cellPosition))
             {
-               
+              
                 this.transform.position = new Vector3(mouspos.x, mouspos.y, -1); ;
             }
         }
+        
     }
 }

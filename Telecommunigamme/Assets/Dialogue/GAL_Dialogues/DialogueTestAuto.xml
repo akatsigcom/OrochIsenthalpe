@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+  <discution>
+    <Speech>
+      <name>Hiro</name>
+      <sentences>
+        <string>C'est quand qu'on arrive ??</string>
+        <string>J'ai faim.</string>
+        <string>On est déjà passé par là, non ?</string>
+        <string>En plus j'ai mal au pieds !</string>
+        <string>Et je suis fatigué.</string>
+        <string>AlaïaaaaAAAAA!</string>
+      </sentences>
+    </Speech>
+    <Speech>
+      <name>Alaia</name>
+      <sentences>
+        <string>On est bientot arrivé, d'accord !?</string>
+        <string>Encore un mot et j'appelle les Ghost Buster.</string>
+      </sentences>
+    </Speech>
+  </discution>
+</Dialogue>

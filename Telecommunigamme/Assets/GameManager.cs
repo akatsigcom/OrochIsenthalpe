@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool move = true;
     public static GameManager instance = null;
     //public GameObject filet;
     //private bool firstTime = true;
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
         //}
 
         currentCollider = colliderList[colliderNumber];
-    
+        
         if(currentScene<previousScene)
         {
             if (currentScene == 0)
@@ -103,8 +104,18 @@ public class GameManager : MonoBehaviour
 
 
     }
+    private void Update()
+    {
+        if (!move)
+        {
+            target.transform.position = player.transform.position;
+        }
+    }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a1eaf10fffbacf54d3c6424faabe4b8e411cc621
     public void OnFadeComplete(int numbercol,int levelIndex)
     {
         colliderNumber = numbercol;
@@ -121,6 +132,13 @@ public class GameManager : MonoBehaviour
     //    SceneManager.LoadScene(currentScene);
 
     //}
+    public void DeactivateMove()
+    {
+        move = false;
+    }
 
-
+    public void ActivateMove()
+    {
+        move = true;
+    }
 }
