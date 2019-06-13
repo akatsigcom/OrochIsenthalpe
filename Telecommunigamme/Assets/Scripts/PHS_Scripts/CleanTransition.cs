@@ -10,7 +10,10 @@ public class CleanTransition : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-       FadeToLevel(nextScene);
+        if (col.name == "Player")
+        {
+            FadeToLevel(nextScene);
+        }
     }
     public void FadeToLevel(int levelIndex)
     {

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ELC_Scenes/_Scene4/_Scene4.unity
     guid: 073398ad4a95e4a4196f0007423cd3b2
+  - enabled: 1
+    path: Assets/_Scenes/BEW_Scenes/Riddle_1.unity
+    guid: f39a154666f5bb34099de3ad4abfe27c
   m_configObjects: {}

@@ -12,6 +12,7 @@ public class ANQ_BrailleResult : MonoBehaviour
         if (ANQ_GenerateBigButterfly.rightBrailleWord == textResult.text)
         {
             textResult.color = Color.green;
+
         }
     }
 }

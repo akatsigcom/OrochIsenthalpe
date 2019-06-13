@@ -22,6 +22,6 @@ public class follow : MonoBehaviour
             rotate = true;
         }
 
-        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.58f, player.transform.position.z);
+        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.58f, -1);
     }
 }

@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    private static int currentScene = 0;
+    //public GameObject filet;
+    //private bool firstTime = true;
+    //private bool butterfly = false;
+    public int currentScene;
     private static int colliderNumber = 0;
     private static int previousScene = -1;
     public GameObject target;
@@ -40,9 +43,18 @@ public class GameManager : MonoBehaviour
     public void SetUp()
 
     {
+        //if (currentScene==1 && firstTime)
+       // {
+           // firstTime = false;
+            //butterfly = true;
+        //}
+
+        //if (butterfly)
+        //{
+           // filet.SetActive(true);
+        //}
 
         currentCollider = colliderList[colliderNumber];
-        Debug.Log("hello");
     
         if(currentScene<previousScene)
         {
@@ -101,6 +113,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentScene);
         
     }
+
+    //public void EndButterFly()
+    //{
+    //    butterfly = false;
+    //    filet.SetActive(false);
+    //    SceneManager.LoadScene(currentScene);
+
+    //}
 
 
 }
