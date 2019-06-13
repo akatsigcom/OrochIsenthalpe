@@ -28,8 +28,6 @@ public static class ImageSlicer
         for (int x = 1; x < blocksPerLine - 1; x++)
         {
             image = Puzzle.dict[brailleWord[x - 1].ToString()];
-            Debug.Log(brailleWord[x - 1]);
-            Debug.Log(image);
             for (int y = 0; y < 2; y++)
             {
                 Texture2D block = new Texture2D(blockWidth, blockHeight);
@@ -37,6 +35,7 @@ public static class ImageSlicer
                 block.SetPixels(image.GetPixels(0, y*blockHeight , blockWidth, blockHeight));
                 block.Apply();
                 blocks[x, y] = block;
+                
             }
         } 
         return blocks;

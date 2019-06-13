@@ -111,10 +111,12 @@ public class Puzzle : MonoBehaviour
 
     void CreatePuzzle()
     {
+        
         blocks = new Block[blocksPerLine, blocksPerColumn];   // création de la liste des blocs 
         Texture2D[,] imageSlices = ImageSlicer.GetSlices(brailleWord, blocksPerLine);
         //Vector3Int [,] MatriceLettre= transformationMatrice(mot_a_coder);
         //Texture2D [,] ImageLettre = transformationImage(mot_a_coder);
+
 
         for (int y = 0; y < blocksPerColumn ; y++)
         {
@@ -130,6 +132,8 @@ public class Puzzle : MonoBehaviour
                 block.Init(new Vector2Int(x, y), imageSlices[x, y]);
                 //block.Init(new Vector2Int(x, y), ImageLettre[x,y], MatriceLettre[x, y]); //on donne l'image (une partie découpée de l'image d'origine) au bloc 
                 blocks[x, y] = block;
+
+                blockObject.tag = letterAndPos(x, y);
 
                 if (y == blocksPerColumn - 1 && x == blocksPerLine - 1)
                 {
@@ -166,6 +170,28 @@ public class Puzzle : MonoBehaviour
         Camera.main.orthographicSize = Mathf.Max(blocksPerLine, blocksPerColumn) * .55f; //modification de l'image pour que ça correponde à l'écran
         inputs = new Queue<Block>();
         state = PuzzleState.InPlay;
+    }
+
+    string letterAndPos(int x, int y)
+    {
+        string letter;
+        string pos;
+
+        if (y == 0) { pos = "Bas"; }
+        else { pos = "Haut";}
+
+        if (x > 0 & x<=brailleWord.Length)
+        {
+            letter = brailleWord[x - 1].ToString();
+        }
+        else { letter = "Maj"; }
+
+        if (x == brailleWord.Length + 1)
+        {
+            letter= "blank";
+            pos="";
+        }
+        return letter + pos;
     }
 
     void PlayerMoveBlockInput(Block blockToMove)
@@ -264,22 +290,54 @@ public class Puzzle : MonoBehaviour
 
     void CheckIfSolved() //modification de l'état du jeu (en Solved) si le puzzle est résolu 
     {
-        //foreach (Block block in blocks)
-        //{
-        //    if (!block.IsAtStartingMatrice())
-        //    {
-        //        return;
-        //    }
-        //}
+        string[,] currentPos = new string[blocksPerLine,blocksPerColumn];
+        int xpos;
+        int ypos;
+        string currentWord ="";
+        bool maj = false;
+
+
         foreach (Block block in blocks)
         {
-            if (!block.IsAtStartingCoord())
+            xpos = block.coord.x;
+            ypos = block.coord.y;
+            currentPos[xpos, ypos] = block.tag;
+        }
+        if (currentPos[0, 0][0].ToString() == "M" & "M" == currentPos[0, 1][0].ToString())
+        {
+            if (currentPos[0, 0].Substring(currentPos[0, 0].Length - 3) == "Bas" & currentPos[0, 1].Substring(currentPos[0, 1].Length - 4) == "Haut")
             {
-                return;
+                maj = true;
             }
         }
-        state = PuzzleState.Solved;
-        emptyBlock.gameObject.SetActive(true);
+        else
+        {
+            maj = false;
+        }
+
+        if (maj)
+            {
+            for (int x = 1; x < blocksPerLine; x++)
+            {
+                if (currentPos[x, 0][0].ToString() == currentPos[x, 1][0].ToString())
+                {
+                    if (currentPos[x, 0].Substring(currentPos[x, 0].Length - 3) == "Bas" & currentPos[x, 1].Substring(currentPos[x, 1].Length - 4) == "Haut")
+                    {
+                        currentWord += currentPos[x, 0][0].ToString();
+                    }
+                }
+                else
+                {
+                    currentWord += " ";
+                }
+            }
+        }
+        if (currentWord == brailleWord)
+        {
+            state = PuzzleState.Solved;
+            emptyBlock.gameObject.SetActive(true);
+        }
+        Debug.Log(currentWord);
     }
 
     public static Texture2D aBraille;
