@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialogue>
+<discution>
+  <Speech>
+    <name>Vieil aveugle</name>
+    <sentences>
+      <string>Oh merci! Je sens que c'est bien ma canne !</string>
+      <string>Vous êtes vraiment des personnes adorables.</string>
+    </sentences>
+  </Speech>
+</discution>
+</Dialogue>
