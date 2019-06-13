@@ -13,14 +13,16 @@ public class Menu : MonoBehaviour
     public void MainMenu()
     {
         MenuHolder.SetActive(true);
+        GameManager.instance.DeactivateMove();
     }
 
     public void Resume()
     {
         MenuHolder.SetActive(false);
+        GameManager.instance.ActivateMove();
     }
 
-    public void Save()
+        public void Save()
     {
         UISaveSystem.SaveUI(timeline.GetComponent<TimeLine>(), objects.GetComponent<ObjectManager>(), quests.GetComponent<QuestManager>());
     }
