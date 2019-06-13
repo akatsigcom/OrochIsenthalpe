@@ -30543,6 +30543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a684fa7ff09399a42a2c345199ea6726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 1
   currentScene: 3
   target: {fileID: 1398603898}
   player: {fileID: 624930665}
@@ -30775,6 +30776,16 @@ PrefabInstance:
     - target: {fileID: 4664027202230641226, guid: 9a4003d8c8e766e4896c8d9fac8528d4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794119837991142004, guid: 9a4003d8c8e766e4896c8d9fac8528d4,
+        type: 3}
+      propertyPath: discutionDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775314322926195469, guid: 9a4003d8c8e766e4896c8d9fac8528d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
