@@ -6,6 +6,61 @@ TagManager:
   tags:
   - Perso
   - Environment
+  - aBas
+  - aHaut
+  - bBas
+  - bHaut
+  - cBas
+  - cHaut
+  - dBas
+  - dHaut
+  - eBas
+  - eHaut
+  - fBas
+  - fHaut
+  - gBas
+  - gHaut
+  - hBas
+  - hHaut
+  - iBas
+  - iHaut
+  - jBas
+  - jHaut
+  - kBas
+  - kHaut
+  - lBas
+  - lHaut
+  - mBas
+  - mHaut
+  - nBas
+  - nHaut
+  - oBas
+  - oHaut
+  - pBas
+  - pHaut
+  - qBas
+  - qHaut
+  - rBas
+  - rHaut
+  - sBas
+  - sHaut
+  - tBas
+  - tHaut
+  - uBas
+  - uHaut
+  - vBas
+  - vHaut
+  - wBas
+  - wHaut
+  - xBas
+  - xHaut
+  - yBas
+  - yHaut
+  - zBas
+  - zHaut
+  - MajBas
+  - MajHaut
+  - blank
   layers:
   - Default
   - TransparentFX
