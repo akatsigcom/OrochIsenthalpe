@@ -168,6 +168,22 @@ public class CodageMorse : MonoBehaviour
 
     public static bool rightMorse = false;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            cheatCodeCodageMorse();
+        }
+    }
+
+    void cheatCodeCodageMorse()
+    {
+        Text textMorse = GetComponent<Text>();
+        word++;
+        textMorse.text = "";
+        displayResult = true;
+    }
+
     public void VerificationReport()      // check if the right morse translation was given for the code
     {
         Text textMorse = GetComponent<Text>();
