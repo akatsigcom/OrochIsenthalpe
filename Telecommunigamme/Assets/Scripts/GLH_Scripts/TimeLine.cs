@@ -16,7 +16,7 @@ public class TimeLine : MonoBehaviour
     public float unitProportionalHeigth = 0.15f; //height of blocs, proportional to screen size
     private float beginning = 0.1f * Screen.width;
     private float ending = 0.9f * Screen.width;
-    private float lineHeight = 0.92f * Screen.height;
+    private float lineHeight = 0.75f * Screen.height;
     public int timeCount; //int to know were the player is timewise
 
 
