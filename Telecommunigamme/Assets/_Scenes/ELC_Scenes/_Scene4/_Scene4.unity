@@ -20390,7 +20390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 673424598}
   colliderNumber: 1
-  nextScene: 0
+  nextScene: 2
 --- !u!95 &673424598
 Animator:
   serializedVersion: 3
@@ -21011,7 +21011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1191636301
 Transform:
   m_ObjectHideFlags: 0
@@ -30280,7 +30280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a684fa7ff09399a42a2c345199ea6726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 1
   target: {fileID: 1398603898}
   player: {fileID: 624930665}
   Alaia: {fileID: 1938193017}

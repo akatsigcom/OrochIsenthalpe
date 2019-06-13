@@ -7,19 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    private int sceneToLoad;
-    public Animator animator;
-    //public string[] scenesNames = new string[] { "Scene1working", "_Scene2", "_Scene3" };
     private static int currentScene = 0;
     private static int colliderNumber = 0;
     private static int previousScene = -1;
     public GameObject target;
     public GameObject player;
-    public GameObject Collider;
+    private GameObject currentCollider;
     public GameObject Alaia;
     public GameObject Hiro;
     private int sens;
+    public GameObject[] colliderList = new GameObject[] { };
+
     // Start is called before the first frame update
+    
     void Awake()
 
     {
@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log(currentScene);
 
         SetUp();
 
@@ -42,63 +41,65 @@ public class GameManager : MonoBehaviour
 
     {
 
-
-
-        if (currentScene > previousScene)
+        currentCollider = colliderList[colliderNumber];
+        Debug.Log("hello");
+    
+        if(currentScene<previousScene)
         {
             if (currentScene == 0)
             {
-                target.transform.position = new Vector3(Collider.transform.position.x + 3f, Collider.transform.position.y, Collider.transform.position.z);
-                player.transform.position = new Vector3(Collider.transform.position.x + 3f, Collider.transform.position.y, Collider.transform.position.z);
-
-
+                target.transform.position = new Vector3(currentCollider.transform.position.x - 2f, currentCollider.transform.position.y, currentCollider.transform.position.z);
+                player.transform.position = target.transform.position;
             }
             else
             {
-                target.transform.position = new Vector3(Collider.transform.position.x + 4f, Collider.transform.position.y, Collider.transform.position.z);
-                player.transform.position = new Vector3(Collider.transform.position.x + 4f, Collider.transform.position.y, Collider.transform.position.z);
-            }
-            sens = -1;
-            Alaia.transform.position = new Vector3(player.transform.position.x - 1f, player.transform.position.y + 1.58f, -1);
-            Hiro.transform.position = new Vector3(Alaia.transform.position.x - 0.5f, Alaia.transform.position.y - 0.1f, -1);
+            target.transform.position = new Vector3(currentCollider.transform.position.x - 2f,currentCollider.transform.position.y, currentCollider.transform.position.z);
+            player.transform.position = target.transform.position;
 
+
+            }
+            sens = 1;
+            Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, player.transform.position.z);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y - 0.1f, player.transform.position.z);
+            
         }
         else
         {
             if (currentScene == 0)
             {
-                target.transform.position = new Vector3(Collider.transform.position.x - 1f, Collider.transform.position.y, Collider.transform.position.z);
-                player.transform.position = new Vector3(Collider.transform.position.x - 1f, Collider.transform.position.y, Collider.transform.position.z);
+             target.transform.position = new Vector3(currentCollider.transform.position.x + 2f, currentCollider.transform.position.y,currentCollider.transform.position.z);
+             player.transform.position = new Vector3(currentCollider.transform.position.x + 2f, currentCollider.transform.position.y, currentCollider.transform.position.z);
+
+
             }
             else
             {
-                target.transform.position = new Vector3(Collider.transform.position.x - 4f, Collider.transform.position.y, Collider.transform.position.z);
-                player.transform.position = new Vector3(Collider.transform.position.x - 4f, Collider.transform.position.y, Collider.transform.position.z);
+            target.transform.position = new Vector3(currentCollider.transform.position.x + 4f, currentCollider.transform.position.y, currentCollider.transform.position.z);
+            player.transform.position = player.transform.position = target.transform.position;
+
             }
-            sens = 1;
-            Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, player.transform.position.z);
-            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y - 0.1f, player.transform.position.z);
-
+            sens = -1;
+            Alaia.transform.position = new Vector3(player.transform.position.x - 1f, player.transform.position.y + 1.58f, player.transform.position.z);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x - 0.5f, Alaia.transform.position.y - 0.1f, player.transform.position.z);
+            
         }
-
+        player.SetActive(true);
         Alaia.SetActive(true);
         Hiro.SetActive(true);
 
 
 
+
     }
 
-    public void FadeToLevel(int levelIndex)
-
+   
+    public void OnFadeComplete(int numbercol,int levelIndex)
     {
+        colliderNumber = numbercol;
         previousScene = currentScene;
         currentScene = levelIndex;
-        sceneToLoad = levelIndex;
-        animator.SetTrigger("FadeOut");
-    }
-    public void OnFadeComplete()
-    {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(currentScene);
+        
     }
 
 

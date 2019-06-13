@@ -6,11 +6,7 @@ public class follow : MonoBehaviour
 {
     public GameObject player;
     private bool rotate = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
+ 
     // Update is called once per frame
     void Update()
 
@@ -26,6 +22,6 @@ public class follow : MonoBehaviour
             rotate = true;
         }
 
-        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.58f, -1);
+        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.58f, player.transform.position.z);
     }
 }

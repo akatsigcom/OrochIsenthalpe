@@ -4,17 +4,19 @@ using UnityEngine;
 public class CleanTransition : MonoBehaviour
 {
     public Animator animator;
+    public int colliderNumber;
     public int nextScene;
-    private int sceneToLoad;
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
-        GameManager.instance.FadeToLevel(nextScene);
+       FadeToLevel(nextScene);
+    }
+    public void FadeToLevel(int levelIndex)
+    {
+       animator.SetTrigger("FadeOut");
+       GameManager.instance.OnFadeComplete(colliderNumber, levelIndex);
     }
 
-   
+
 }
