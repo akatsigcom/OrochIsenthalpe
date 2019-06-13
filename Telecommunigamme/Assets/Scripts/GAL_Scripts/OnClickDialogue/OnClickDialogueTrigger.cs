@@ -6,7 +6,7 @@ public class OnClickDialogueTrigger : DialogueTrigger
 {
     public OnClickDialogueTrigger() { }
 
-    new public void TriggerDialogue()
+    public void TriggerDialogue()
     {
         dialogue = load_dialogue(dialoguePath);
         FindObjectOfType<OnClickDialogueManager>().StartDialogue(dialogue);
@@ -15,5 +15,11 @@ public class OnClickDialogueTrigger : DialogueTrigger
     public void TriggerDialogue(Dialogue dia)
     {
         FindObjectOfType<OnClickDialogueManager>().StartDialogue(dia);
+    }
+
+    public void TriggerDialogue(string chem)
+    {
+        dialogue = load_dialogue(chem);
+        FindObjectOfType<OnClickDialogueManager>().StartDialogue(dialogue);
     }
 }

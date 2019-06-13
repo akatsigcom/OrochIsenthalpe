@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    private string sentence = "default";
+
+    private IEnumerator coroutine;
     protected Queue<string> sentences;
     protected Queue<Speech> speeches;
 
@@ -34,6 +37,7 @@ public class DialogueManager : MonoBehaviour
         foreach (Speech speech in dialogue.discution)
         {
             speeches.Enqueue(speech);
+            Debug.Log(sentence);
         }
 
         DisplayNextSpeech();
@@ -42,12 +46,15 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSpeech()
     {
+        Debug.Log("speech lancé");
+
         Speech speech = speeches.Dequeue();
         nameText.text = speech.name;
 
         foreach (string sentence in speech.sentences)
         {
             sentences.Enqueue(sentence);
+            Debug.Log(sentence);
         }
        
             DisplayNextSentence();
@@ -61,19 +68,24 @@ public class DialogueManager : MonoBehaviour
         {
             if (speeches.Count == 0)
             {
+                Debug.Log("sentence = 0, speech != 0");
                 EndDialogue();
                 return;
             }
             else
             {
+                Debug.Log("sentence = 0, speech != 0");
                 DisplayNextSpeech();
                 return;
             }
         }
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        Debug.Log(sentence);
+        if (sentence != "default"){
+            StopCoroutine(coroutine);
+        }
+        sentence = sentences.Dequeue();
+        coroutine = TypeSentence(sentence);
+        StartCoroutine(coroutine);
         WaitNextSentence();
     }
 
@@ -89,6 +101,8 @@ public class DialogueManager : MonoBehaviour
 
  void EndDialogue()
     {
+        Debug.Log("dialogue du manager fini");
+
         animator.SetBool("IsOpen", false);
     }
 

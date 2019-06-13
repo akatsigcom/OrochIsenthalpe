@@ -7,105 +7,103 @@ using System.Xml.Serialization;
 
 public class QuizzManager : MonoBehaviour
 {
-    public Button AnswerButton1;
+    public GameObject AnswerButton1;
     public Text TextButton1;
-    public Button AnswerButton2;
+    public GameObject AnswerButton2;
     public Text TextButton2;
-    public Button AnswerButton3;
+    public GameObject AnswerButton3;
     public Text TextButton3;
+    public Text QuestionText;
+    public GameObject Panel;
 
+    private TreeDialogue quizz;
+
+    public string quizzPath;
 
     private bool WaitAnswer;
 
-    public Text QuestionText;
+    private TreeDialogueNode node;
+
+    public OnClickDialogueManager Manager;
 
     private List<int> listResult = new List<int>();
 
+
+
     private void Start()
     {
-        // AnswerButton1.enabled = false;
-        // AnswerButton2.enabled = false;
-        //AnswerButton3.enabled = false;
-        // QuestionText.enabled = false;
         WaitAnswer = false;
+        AnswerButton1.SetActive(false);
+        AnswerButton2.SetActive(false);
+        AnswerButton3.SetActive(false);
+        Panel.SetActive(false);
+
+       //quizz = load_quizz(quizzPath);
+        //Manager.StartDialogue(quizz.Nodes[0].Text);
+
+        StartQuizz();
 
     }
 
     private void Update()
     {
-       /* AnswerButton1.enabled = WaitAnswer;
-        AnswerButton2.enabled = WaitAnswer;
-        AnswerButton3.enabled = WaitAnswer;
-        QuestionText.enabled = WaitAnswer;
-        */
+        AnswerButton1.SetActive(WaitAnswer);
+        AnswerButton2.SetActive(WaitAnswer);
+        AnswerButton3.SetActive(WaitAnswer);
+        Panel.SetActive(WaitAnswer);
+
     }
 
 
 
-    public void StartQuizz(TreeDialogue quizz)
+    public void StartQuizz()
     {
-        Debug.Log("Execution Start Quizz");
+        quizz = load_quizz(quizzPath);
 
+        StartCoroutine(run());
+
+    }
+
+
+    public IEnumerator run()
+    {
         int node_id = 0;
-
 
         while (node_id != -1)
         {
-            node_id = Run_node(quizz.Nodes[node_id]);
-        }
-        Debug.Log("fin du quizz");
-        Debug.Log(listResult[listResult.Count - 1]);
+            node = quizz.Nodes[node_id];
 
+
+            Manager.StartDialogue(node.Text);
+    
+            yield return new WaitForSeconds(1.25f);
+
+
+            while (Manager.animator.GetBool("IsOpen") == true)
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+
+            Debug.Log("le dialogue s'est fini");
+
+            WaitAnswer = true;
+
+            TextButton1.text = node.Options[0].Text;
+            TextButton2.text = node.Options[1].Text;
+            TextButton3.text = node.Options[2].Text;
+            QuestionText.text = node.Question;
+
+            while (WaitAnswer == true)
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+            node_id = node.Options[listResult[listResult.Count - 1]].DestinationNodeID;
+
+        }
+
+        ShowResult();
     }
 
-    public int Run_node(TreeDialogueNode node)
-    {
-        Debug.Log("execution d'un noeud");
-        Debug.Log(node.Text.discution[0].name);
-        
-        int nextNode = -1;
-
-        FindObjectOfType<OnClickDialogueTrigger>().TriggerDialogue(node.Text);
-
-        bool flag1 = true;
-
-        while (flag1)
-        {
-            if (FindObjectOfType<OnClickDialogueManager>().animator.GetBool("IsOpen") == false)
-            {
-                flag1 = false;
-            }
-            else { }
-        }
-
-        Debug.Log("le dialogue s'est fini");
-
-         
-        WaitAnswer = true;
-
-        TextButton1.text = node.Options[0].Text;
-        TextButton2.text = node.Options[1].Text;
-        TextButton3.text = node.Options[2].Text;
-        QuestionText.text = node.Question;
-
-        /*bool flag2 = true;
-        while (flag2)
-        {
-            if (WaitAnswer == false)
-            {
-                flag2 = false;
-            }
-            else { }
-        }
-        
-        AnswerButton1.enabled = false;
-        AnswerButton2.enabled = false;
-        AnswerButton3.enabled = false;
-        QuestionText.enabled = false;
-
-        nextNode = node.Options[listResult[listResult.Count -1]].DestinationNodeID;*/
-        return nextNode;
-    }
 
     public void SendAnswer1()
     {
@@ -126,6 +124,18 @@ public class QuizzManager : MonoBehaviour
         WaitAnswer = false;
     }
 
+    private static TreeDialogue load_quizz(string path)
+    {
+        XmlSerializer serz = new XmlSerializer(typeof(TreeDialogue));
+        StreamReader reader = new StreamReader(path);
 
+        TreeDialogue dia = (TreeDialogue)serz.Deserialize(reader);
+        Debug.Log("chargement du quizz réussi");
+        return dia;
+    }
 
+    private void ShowResult()
+    {
+        return;
+    }
 }
