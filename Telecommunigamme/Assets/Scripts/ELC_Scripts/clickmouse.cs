@@ -20,7 +20,7 @@ public class clickmouse : MonoBehaviour
             if (!grid.HasTile(cellPosition))
             {
                
-                this.transform.position = new Vector3(mouspos.x, mouspos.y, -1);
+                this.transform.position = mouspos;
             }
         }
     }

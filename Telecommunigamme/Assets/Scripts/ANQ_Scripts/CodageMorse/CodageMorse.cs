@@ -12,22 +12,8 @@ public class CodageMorse : MonoBehaviour
 
 
     ////// Buttons for Morse writings
+ 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            cheatCodeCodageMorse();
-        }
-    }
-
-    void cheatCodeCodageMorse()
-    {
-        Text textMorse = GetComponent<Text>();
-        word++;
-        textMorse.text = "";
-        displayResult = true;
-    }
 
     public void ClickDot()
     {

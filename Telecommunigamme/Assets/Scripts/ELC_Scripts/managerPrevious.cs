@@ -6,7 +6,12 @@ public class managerPrevious : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D col)
     {
-        GameManager.instance.PreviousScene();
+        
+            if (col.name == "player")
+            {
+
+                GameManager.instance.PreviousScene();
+            }
 
     }
     
