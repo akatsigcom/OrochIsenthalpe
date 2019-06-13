@@ -14,10 +14,10 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    private string sentence = "default";
+    protected string sentence = "default";
 
 
-    private IEnumerator coroutine;
+    protected IEnumerator coroutine;
     protected Queue<string> sentences;
     protected Queue<Speech> speeches;
 
@@ -103,6 +103,9 @@ public class DialogueManager : MonoBehaviour
     {
 
         animator.SetBool("IsOpen", false);
+        GameManager.instance.ActivateMove();
+
+
     }
 
     // For the Automatic Dialogue, on the top of the screen, which go on alone
