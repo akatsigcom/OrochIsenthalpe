@@ -121,7 +121,7 @@ public class Puzzle : MonoBehaviour
             for (int x = 0; x < blocksPerLine; x++)
             {
                 GameObject blockObject = GameObject.CreatePrimitive(PrimitiveType.Quad); // récupération d'un bloc = Quad 
-                blockObject.transform.position = new Vector2(-Vector2.one.x * (blocksPerColumn - 1) * .5f + new Vector2(x, y).x, -Vector2.one.y * (blocksPerLine - 1) * .5f + new Vector2(x, y).y); // on s'arrange pour que ça soit symétrique par rapport à la caméra 
+                blockObject.transform.position = new Vector2(-Vector2.one.x * (blocksPerLine - 1) * .5f + new Vector2(x, y).x, -Vector2.one.y * (blocksPerColumn - 1) * .5f + new Vector2(x, y).y); // on s'arrange pour que ça soit symétrique par rapport à la caméra 
                 blockObject.transform.parent = transform;
 
                 Block block = blockObject.AddComponent<Block>();
