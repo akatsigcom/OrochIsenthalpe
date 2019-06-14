@@ -14,7 +14,7 @@ public class Puzzle : MonoBehaviour
 
     public static Dictionary<string, Texture2D> dict;
 
-    string brailleWord;
+    public static string brailleWord;
 
     enum PuzzleState { Solved, Shuffling, InPlay }; // Deux états possibles du puzzle : Résolu ou En plein jeu 
     PuzzleState state;
@@ -288,6 +288,8 @@ public class Puzzle : MonoBehaviour
 
     }
 
+    //public static bool currentWordOK;
+
     void CheckIfSolved() //modification de l'état du jeu (en Solved) si le puzzle est résolu 
     {
         string[,] currentPos = new string[blocksPerLine,blocksPerColumn];
@@ -336,7 +338,12 @@ public class Puzzle : MonoBehaviour
         {
             state = PuzzleState.Solved;
             emptyBlock.gameObject.SetActive(true);
+            //currentWordOK = true;
         }
+        //else
+        //{
+        //    currentWordOK = false;
+        //}
         Debug.Log(currentWord);
     }
 
