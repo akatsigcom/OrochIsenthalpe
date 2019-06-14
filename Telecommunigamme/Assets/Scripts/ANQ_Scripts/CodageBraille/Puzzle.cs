@@ -288,7 +288,7 @@ public class Puzzle : MonoBehaviour
 
     }
 
-    //public static bool currentWordOK;
+    public static bool currentWordOK;
 
     void CheckIfSolved() //modification de l'état du jeu (en Solved) si le puzzle est résolu 
     {
@@ -338,12 +338,12 @@ public class Puzzle : MonoBehaviour
         {
             state = PuzzleState.Solved;
             emptyBlock.gameObject.SetActive(true);
-            //currentWordOK = true;
+            currentWordOK = true;
         }
-        //else
-        //{
-        //    currentWordOK = false;
-        //}
+        else
+        {
+            currentWordOK = false;
+        }
         Debug.Log(currentWord);
     }
 

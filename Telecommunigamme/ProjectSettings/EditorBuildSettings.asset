@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GAL_Scenes/QuizzScene.unity
     guid: a1a4385ad62c75d4aba00f1994f9104a
+  - enabled: 1
+    path: Assets/_Scenes/ANQ_Scenes/Scene Decodage Braille 2.unity
+    guid: c335b6dc84814a84cbb3700db9bee1b6
+  - enabled: 1
+    path: Assets/_Scenes/ANQ_Scenes/Scene Codage Morse.unity
+    guid: 781e59e251f329a4a95b01fb9bff64f8
+  - enabled: 1
+    path: Assets/_Scenes/ANQ_Scenes/Scene Decodage Morse.unity
+    guid: 8105d964b3d4b14459845475021f66de
   m_configObjects: {}

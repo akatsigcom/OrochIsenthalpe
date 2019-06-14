@@ -15,14 +15,14 @@ public class ANQ_BrailleText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    //    brailleResult = GetComponent<Text>();
-    //    if (Puzzle.currentWordOK)
-    //    {
-    //        brailleResult.text = "Bravo !";
-    //    }
-    //    else
-    //    {
-    //        brailleResult.text = Puzzle.brailleWord;
-    //    }
+        brailleResult = GetComponent<Text>();
+        if (Puzzle.currentWordOK)
+        {
+            brailleResult.text = "Bravo !";
+        }
+        else
+        {
+            brailleResult.text = Puzzle.brailleWord;
+        }
     }
 }
