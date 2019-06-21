@@ -108,14 +108,10 @@ public class GameManager : MonoBehaviour
     {
         if (!move)
         {
-            target.transform.position = player.transform.position;
+           target.transform.position = player.transform.position;
         }
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a1eaf10fffbacf54d3c6424faabe4b8e411cc621
     public void OnFadeComplete(int numbercol,int levelIndex)
     {
         colliderNumber = numbercol;
